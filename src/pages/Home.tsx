@@ -76,7 +76,7 @@ export default function Home() {
               <span className="block text-[11px] text-slate-500">מעבדת תיקון פלאפונים</span>
             </div>
           </a>
-          <nav className="hidden items-center gap-6 text-sm font-medium text-slate-700 md:flex">
+          <nav aria-label="ניווט ראשי" className="hidden items-center gap-6 text-sm font-medium text-slate-700 md:flex">
             <a href="#services" className="transition hover:text-blue-600">שירותים</a>
             <a href="#how" className="transition hover:text-blue-600">איך זה עובד</a>
             <a href="#reviews" className="transition hover:text-blue-600">המלצות</a>

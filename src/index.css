@@ -82,4 +82,53 @@
   button {
     font-family: inherit;
   }
+
+  /* אינדיקטור פוקוס ברור לכל הרכיבים (WCAG 2.4.7) */
+  :focus-visible {
+    outline: 3px solid hsl(217 91% 45%);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* הדגשה עוד יותר ברורה במצב ניגודיות גבוהה */
+  @media (prefers-contrast: more) {
+    :focus-visible {
+      outline-width: 4px;
+    }
+  }
+
+  /* כיבוד העדפת הפחתת תנועה (WCAG 2.3.1) */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* קישור דילוג לתוכן (WCAG 2.4.1) — גלוי רק במקלדת */
+.skip-link {
+  position: absolute;
+  top: -48px;
+  right: 8px;
+  z-index: 100;
+  padding: 10px 16px;
+  background: hsl(221 83% 40%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: top 0.15s ease-out;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 8px;
+  outline-offset: 2px;
 }
